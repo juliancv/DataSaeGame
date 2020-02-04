@@ -5,6 +5,7 @@ DataSae Game 2020
 El siguiente documento contiene la información necesaria para ejecutar dentro de un ambiente de docker
 el juego desarrollado para cumplir con el reto de programación enviado por la empresa DataSAE.
 
+##########################
 Installación del ambiente.
 ##########################
 
