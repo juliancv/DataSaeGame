@@ -10,6 +10,8 @@ el juego desarrollado para cumplir con el reto de programación enviado por la e
 Servidor web con php 7.3
 Servidor de base de datos con mysql 8
 
+El aplicativo se desarrollo baja el framework de php codeignaiter 3.1
+
 ##########################
 Installación del ambiente.
 ##########################
@@ -22,5 +24,19 @@ Installación del ambiente.
      * docker container inpect {ID_CONTENEDOR}, y tomar la ip que se encuentra dentro de la varible networks- IPAddres:
 
 Para abrir el aplicativo, se debe ejecutar la url http://localhost:8000/game/
+
+########################
+Manual de uso
+########################
+-> Modulo jugar:
+     Permite visualizar las apuestas y ultimo resultado de las apuestas.
+     Para realizar una apuesta se debe dar click el botón Generar apuesta y Posteriormente en jugar.
+     * En caso de que se encuentre activo el juego automático este se ejecuta cada minuto, ejecutando 
+     las acciones de Generar apuesta y Jugar.
+-> Módulo Administrar usuarios.
+     Permite listar, editar, eliminar y agregar datos de los usuarios.
+     * El valor minimo de dinero por defecto siempre será minimo 10.000.
+-> Módulo Cambiar Automático.
+     Este permite modificar el parámetro si el juego apuesta de manera automática o no.
 
 Desarrollado por: Julian Stevan Vergaño Canacuan.
