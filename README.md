@@ -21,4 +21,6 @@ Installación del ambiente.
      * docker container ls , tomar el id del contenedor y Ejecutar
      * docker container inpect {ID_CONTENEDOR}, y tomar la ip que se encuentra dentro de la varible networks- IPAddres:
 
+Para abrir el aplicativo, se debe ejecutar la url http://localhost:8000/game/
+
 Desarrollado por: Julian Stevan Vergaño Canacuan.
