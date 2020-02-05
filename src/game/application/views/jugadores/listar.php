@@ -21,7 +21,7 @@
                 <td class="col-xs-8"> <?php echo $jugador->jug_nombre?>  </td>
                 <td class="col-xs-2"> <?php echo $jugador->jug_apellido?>  </td>
                 <td class="col-xs-2"> <?php echo $jugador->jug_edad?>  </td>
-                <td class="col-xs-2"> <?php echo $jugador->jug_dinero?>  </td>
+                <td class="col-xs-2"> <?php echo round($jugador->jug_dinero,1)?>  </td>
                 <td class="col-xs-2"> 
                 <form method="GET" action="<?php echo base_url('index.php/jugador/delete/'.$jugador->jug_id); ?>">
                     <a class="btn btn-info btn-xs" href="<?php echo base_url('index.php/jugador/editar/'.$jugador->jug_id) ?>"><i class="glyphicon glyphicon-pencil"></i></a>

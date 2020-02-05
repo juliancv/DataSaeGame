@@ -121,33 +121,34 @@ class Generador extends CI_Controller {
         
         //Este arreglo contiene los resultados de las evaluaciones del juego;
         $resultadoApuestas = [];
+        
+        if($apuestaPorPersona != false){
+            foreach ($apuestaPorPersona as $persona){
 
-        foreach ($apuestaPorPersona as $persona){
+                $ganancia = 0;
+                $asierto = false;
 
-            $ganancia = 0;
-            $asierto = false;
+                if($persona->ap_color == $colorRuleta){
+                                
+                    $asierto = true;
 
-            if($persona->ap_color == $colorRuleta){
-                               
-                $asierto = true;
+                    if($colorRuleta == 'Verde'){
+                        $ganancia = $persona->ap_cantidad * 15;
+                    }else{
+                        $ganancia = $persona->ap_cantidad * 2;
+                    }
 
-                if($colorRuleta == 'Verde'){
-                    $ganancia = $persona->ap_cantidad * 15;
                 }else{
-                    $ganancia = $persona->ap_cantidad * 2;
+
+                $ganancia = $persona->ap_cantidad * -1;
                 }
 
-            }else{
+                $resultado = [$persona->ap_jug_id, $persona->ap_cantidad, $persona->ap_color,$ganancia,$colorRuleta];
 
-               $ganancia = $persona->ap_cantidad * -1;
+                array_push($resultadoApuestas,$resultado);
+
             }
-
-            $resultado = [$persona->ap_jug_id, $persona->ap_cantidad, $persona->ap_color,$ganancia,$colorRuleta];
-
-            array_push($resultadoApuestas,$resultado);
-
         }
-
         //Se reinician los resultados dentro de los registros de la base de datos 
         $this->PartidaModel->reiniciarResultados();
 

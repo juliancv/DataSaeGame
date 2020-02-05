@@ -25,7 +25,11 @@ class Game extends CI_Controller {
          */
         $listaResultados = $this->PartidaModel->getResultadosApuestas();
 
-        $this->load->view('game/principal', ['jugadores' => $listaJugadores, 'resultadosApu' => $listaResultados]); // se carga la vista principal del juego
+        //Se carga el valor de juego automático
+        $this->load->model('AutomaticoModel'); //Se carga el modelo con el que se relaciona la clase
+        $valorAut = $this->AutomaticoModel->getUltimoValor();   
+
+        $this->load->view('game/principal', ['jugadores' => $listaJugadores, 'resultadosApu' => $listaResultados, 'valorAut' => $valorAut]); // se carga la vista principal del juego
         
         $this->load->view('base_footer'); //Footer de la plantilla
     }

@@ -90,8 +90,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li>
                             <a href="<?php echo base_url() ?>"><i class="fa fa-dashboard fa-fw"></i>Jugar</a>
                         </li>
+                        
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Administrar<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Administrar usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo base_url() ?>index.php/jugador">Ver todos</a>
@@ -102,7 +103,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-    
+                        
+                        <li>
+                            <a href="<?php echo base_url() ?>index.php/automatico/cambiar"><i class="glyphicon glyphicon-cog"></i> Cambiar automático</a>
+                        </li>
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

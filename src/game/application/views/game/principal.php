@@ -8,7 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div>
     <h2>Jugadores conectados:</h2>
-    <table class="table">
+    <input type="hidden" value="<?php echo $valorAut ?>" id="valorAut_id">
+    <table class="table" id="jugadores_id">
         <thead>
             <tr>
                 <th>
@@ -71,8 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div>
     <center>
-        <a href="<?php echo base_url('index.php/generador/generar') ?>"><button class="btn btn-primary"> Generar apuesta </button> </a>
-        <a href="<?php echo base_url('index.php/generador/jugar') ?>"><button class="btn btn-danger" style="width:140px"> Jugar </button> </a>    
+        <a href="<?php echo base_url('index.php/generador/generar') ?>"><button id="gen_apu_id" class="btn btn-primary"> Generar apuesta </button> </a>
+        <a href="<?php echo base_url('index.php/generador/jugar') ?>"><button id="jugar_id" class="btn btn-danger" style="width:140px"> Jugar </button> </a>    
     </center>       
 </div>
 
@@ -95,8 +96,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </th>
                 <th>
                     Ganancia
-                </th>
-            </tr>
+                    </th>
+                </tr>
         </thead>
         <tdoby>
 
@@ -135,3 +136,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </tdoby>
     </table>
 </div>   
+
+<!-- Esta función se encarga de hacer el click en los botones de manera automatica -->
+<script>
+    $(document).ready(function(){
+
+        if($('#valorAut_id').val() == 'si'){
+
+            setInterval(function(){
+                if($("#jugadores_id:contains('No se ha realizado la apuesta')").length == 0){
+                    $('#jugar_id').click();    
+                    //console.log('aposto');
+                }else{
+                    $('#gen_apu_id').click();
+                    //console.log('aposto');
+                }
+            },60000,"JavaScript");
+           
+        }
+
+    });
+
+</script>
